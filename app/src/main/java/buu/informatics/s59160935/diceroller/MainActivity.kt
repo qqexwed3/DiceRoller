@@ -6,6 +6,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_main.*
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -17,7 +18,12 @@ class MainActivity : AppCompatActivity() {
         rollButton.setOnClickListener { rollDice() }
         diceImage = findViewById(R.id.dice_image)
 
+        val resetButton: Button = findViewById(R.id.reset_button)
+        resetButton.setOnClickListener{ resetDice() }
 
+    }
+    private fun resetDice() {
+        diceImage.setImageResource(R.drawable.empty_dice)
     }
 
     private fun rollDice() {
